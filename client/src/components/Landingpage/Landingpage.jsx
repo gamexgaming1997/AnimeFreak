@@ -4,7 +4,7 @@ import { FaSearch, FaAngleDoubleDown } from 'react-icons/fa';
 import { useEffect, useState, useRef } from 'react';
 
 // scss
-import '../../scss/Landingpage.scss';
+import '../../scss/_Landingpage.scss';
 
 
 const Landingpage = () => {
@@ -32,8 +32,6 @@ const Landingpage = () => {
     fetch();
   },[])
 
-  console.log(topAnime)
-
   useEffect(()=>{
     if(topAnime[0]){
       AnimeImg.current.style.backgroundImage = `url(${topAnime[0].images.jpg.large_image_url})`;
@@ -52,8 +50,6 @@ const Landingpage = () => {
     }
     second_fetch();
   },[limitIncrement])
-
-  console.log(topAnimeRemoveOne)
 
   // title,title_english,title_japanese,rating,mal_id,popularity,aired,
   // episodes,genres,score,status,sypnosis,title_synonyms,year 

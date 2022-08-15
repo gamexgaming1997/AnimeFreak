@@ -79,6 +79,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        position: relative;
         .homeBtn{
             @include baseDisplay(var(--bg-transparent),auto,auto);
             display: grid;
@@ -131,6 +132,28 @@
             }
         }
         .aboutusBtn:hover{
+            background: var(--bg-main);
+            .text{
+                color: var(--bg-base-color);
+            }
+        }
+        .loginsignup{
+            @include baseDisplay(var(--bg-transparent),auto,auto);
+            display: grid;
+            place-items: center;
+            padding: 8px 16px;
+            margin-left: .5vw;
+            border: 0px solid transparent;
+            position: absolute;
+            right: 0;
+            margin-right: .5vw;
+            .text{
+                font-family: var(--text-font);
+                font-size: .9em;
+                color: #ffffff;
+            }
+        }
+        .loginsignup:hover{
             background: var(--bg-main);
             .text{
                 color: var(--bg-base-color);
