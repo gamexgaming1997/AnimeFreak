@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: black;
+    --bg-div: rgb(90, 11, 114);
+    --text-font: 'Raleway', sans-serif;
+    --text-color: rgba($color: #ffffff, $alpha: 1.0);
+}
+
+@mixin baseDisplay($backgroundColor,$height,$width) {
+    background: $backgroundColor;
+    height: $height;
+    width: $width;
+}
+
+.App{
+    @include baseDisplay(var(--bg-main),100vh,100vw);
+}

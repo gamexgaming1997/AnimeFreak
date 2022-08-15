@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+:root {
+    --bg-transparent: none;
+    --bg-base-color: white;
+    --bg-main: rgb(19, 19, 19);
+    --bg-div: rgb(79, 19, 107);
+    --text-font: 'Raleway', sans-serif;
+    --text-hover: rgba($color: #f3aa21, $alpha: 1.0);
+}
+
+@mixin baseDisplay($backgroundColor,$height,$width) {
+    background: $backgroundColor;
+    height: $height;
+    width: $width;
+}
+
+.Landingpage{
+    @include baseDisplay(var(--bg-main),auto,100vw);
+    display: grid;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    .first-layer{
+        @include baseDisplay(var(--bg-transparent),6vh,70vw);
+        display: flex;
+        align-items: center;
+        position: relative;
+        .logo{
+            height: 3.5vh;
+        }
+        .inputFormContainer{
+            @include baseDisplay(var(--bg-base-color),auto,auto);
+            position: absolute;
+            top: 50;
+            right: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .searchIconContainer{
+                @include baseDisplay(var(--bg-base-color),3.8vh,2vw);
+                display: grid;
+                place-items: center;
+                border-radius: 0px;
+                border: 0px solid transparent;
+                .icon{
+                    color: rgb(49, 49, 49);
+                }
+            }
+            .searchFormInput{
+                transition: .3s; 
+                border-radius: 0px;   
+                height: 3.7vh;
+                width: 10vw;
+                padding: 0px 0px;
+                font-family: var(--text-font);
+                color: black;
+                outline: none;
+                border: 0px solid transparent;
+                font-size: .9em;
+            }
+            .searchFormInput:focus{
+                transition: .3s;
+                width: 20vw;
+            }
+        }
+    }
+    .second-layer{
+        @include baseDisplay(var(--bg-div),5vh,70vw);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .homeBtn{
+            @include baseDisplay(var(--bg-transparent),auto,auto);
+            display: grid;
+            place-items: center;
+            padding: 8px 16px;
+            margin-left: .5vw;
+            border: 0px solid transparent;
+            .text{
+                font-family: var(--text-font);
+                font-size: .9em;
+                color: #ffffff;
+            }
+        }
+        .homeBtn:hover{
+            background: var(--bg-main);
+            .text{
+                color: var(--bg-base-color);
+            }
+        }
+        .animelistBtn{
+            @include baseDisplay(var(--bg-transparent),auto,auto);
+            display: grid;
+            place-items: center;
+            padding: 8px 16px;
+            border: 0px solid transparent;
+            margin-left: .5vw;
+            .text{
+                font-family: var(--text-font);
+                font-size: .9em;
+                color: #ffffff;
+            }
+        }
+        .animelistBtn:hover{
+            background: var(--bg-main);
+            .text{
+                color: var(--bg-base-color);
+            }
+        }
+        .aboutusBtn{
+            @include baseDisplay(var(--bg-transparent),auto,auto);
+            display: grid;
+            place-items: center;
+            padding: 8px 16px;
+            border: 0px solid transparent;
+            margin-left: .5vw;
+            .text{
+                font-family: var(--text-font);
+                font-size: .9em;
+                color: #ffffff;
+            }
+        }
+        .aboutusBtn:hover{
+            background: var(--bg-main);
+            .text{
+                color: var(--bg-base-color);
+            }
+        }
+    }
+
+    // sec-2
+    .animeFormContainer{
+        @include baseDisplay(black,auto,70vw);
+        margin-top: 2vh;
+        .titleContainer{
+            // Title Container
+            @include baseDisplay(var(--bg-div),5vh,70vw);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border: 0px solid transparent;
+            .text{
+                // Top Anime Title
+                font-family: var(--text-font);
+                margin-left: .5vw;
+                font-size: 1.7em;
+                color: var(--bg-base-color);
+            }
+        }        
+        .TopAnimeContainer{
+            @include baseDisplay(black,auto,70vw); 
+            display: grid;
+            .topAnime{
+                @include baseDisplay(var(--bg-transparent),40vh,70vw);
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                .imgContainer{
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    height: 37vh;
+                    width: 13vw;
+                    margin-left: .5vw;
+                }
+                .detailsContainer{
+                    @include baseDisplay(var(--bg-transparent),40vh,56vw);
+                    margin-left: .5vw;
+                    display: flex;
+                    flex-direction: column;
+                    .titleContainer{
+                        @include baseDisplay(var(--bg-transparent),5vh,56vw);
+                        margin-top: 1.5vh;
+                        .text{
+                            background: var(--bg-transparent);
+                            border: 0px solid var(--bg-transparent);
+                            margin-left: 1.5vw;
+                            font-family: var(--text-font);
+                            font-size: 1.5em;
+                            color: white;
+                        }
+                        .text:hover{
+                            color: #f3aa21
+                        }
+                    }
+                    .alterTitleContainer{
+                        @include baseDisplay(var(--bg-transparent),2.5vh,56vw);
+                        .text{
+                            margin-left: 1.5vw;
+                            font-family: var(--text-font);
+                            font-size: .7em;
+                            color: white;
+                        }
+                    }
+                    .sypnosisContainer{
+                        @include baseDisplay(var(--bg-transparent),23vh,56vw);
+                        display: grid;
+                        place-items: center;
+                        text-align: justify;
+                        .text{
+                            padding: 0px 1.5vw;
+                            font-family: var(--text-font);
+                            font-size: .9em;
+                            color: white;
+                            line-height: 26px;
+                        }
+                    }
+                    .genreContainer{
+                        @include baseDisplay(var(--bg-transparent),6.5vh,56vw);
+                        display: grid;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            margin-left: 1.5vw;
+                            font-family: var(--text-font);
+                            font-size: .9em;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .titleContainer-2{
+            @include baseDisplay(var(--bg-div),5vh,70vw);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .text{
+                font-family: var(--text-font);
+                margin-left: .5vw;
+                font-size: 1.7em;
+                color: var(--bg-base-color);
+            }
+        }
+        .TopAnimeListContainer{
+            @include baseDisplay(var(--bg-transparent),auto,70vw); 
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .anime{
+                @include baseDisplay(var(--bg-transparent),35vh,35vw);
+                border: 1px solid var(--bg-div);
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                .imgContainer{
+                    @include baseDisplay(var(--bg-transparent),33vh,12vw);
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+                .detailsContainer{
+                    @include baseDisplay(var(--bg-transparent),33vh,21vw);
+                    display: flex;
+                    flex-direction: column;
+                    .titleContainer{
+                        @include baseDisplay(var(--bg-transparent),6vh,21vw);
+                        margin-top: .5vh;
+                        .text{
+                            // Top Anime Title
+                            background: var(--bg-transparent);
+                            border: 0px solid var(--bg-transparent);
+                            font-family: var(--text-font);
+                            margin-left: .5vw;
+                            font-size: 1.3em;
+                            color: var(--bg-base-color);
+                        }
+                        .text:hover{
+                            color: #f3aa21
+                        }
+                    }
+                    .otherTitlesContainer{
+                        @include baseDisplay(var(--bg-transparent),4vh,21vw);
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+                        .text{
+                            font-family: var(--text-font);
+                            color: white;
+                            margin-left: .5vw;
+                            font-size: .8em;
+                            padding: 20px 0px;
+                        }
+                    }
+                    .popularityContainer{
+                        @include baseDisplay(var(--bg-transparent),4vh,21vw);
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+                        .text{
+                            font-family: var(--text-font);
+                            color: white;
+                            margin-left: .5vw;
+                            font-size: .8em;
+                            padding: 20px 0px;
+                        }
+                    }
+                    .airedContainer{
+                        @include baseDisplay(var(--bg-transparent),7vh,21vw);
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+                        .text{
+                            font-family: var(--text-font);
+                            color: white;
+                            margin-left: .5vw;
+                            font-size: .8em;
+                            padding: 20px 0px;
+                        }
+                    }
+                    .statusContainer{
+                        @include baseDisplay(var(--bg-transparent),5vh,21vw);
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+                        .text{
+                            font-family: var(--text-font);
+                            color: white;
+                            margin-left: .5vw;
+                            font-size: .8em;
+                            padding: 20px 0px;
+                        }
+                    }
+                    .ratingContainer{
+                        @include baseDisplay(var(--bg-transparent),5vh,21vw);
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+                        .text{
+                            font-family: var(--text-font);
+                            color: white;
+                            margin-left: .5vw;
+                            font-size: .8em;
+                            padding: 20px 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // navigation
+    .navigation{
+        @include baseDisplay(var(--bg-transparent),6vh,70vw);
+        margin-top: 4vh;
+        display: grid;
+        place-items: center;
+        margin-bottom: 5vh;
+        .moreBtn{
+            border: 0px solid var(--bg-transparent);
+            background: var(--bg-transparent);
+            .text{
+                color: white;
+                font-family: var(--text-font);
+                .icon{
+                    color: white;
+                    font-family: var(--text-font);
+                }
+            }
+        }
+    }
+    // footer 
+    // .footerContainer{
+    //     background: rgba($color: #420b81, $alpha: 1.0);
+    //     height: 7vh;
+    //     width: 70vw;
+    //     margin-top: 5vh;
+    // }
+}
