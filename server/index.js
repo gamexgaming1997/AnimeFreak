@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(cors());
 
 const PORT = process.env.PORT || 5000;
-const DATABASE = 'mongodb+srv://ginopogi:ginopogi1230@animefreak.y3mujo2.mongodb.net/?retryWrites=true&w=majority';
+const DATABASE = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@animefreak.y3mujo2.mongodb.net/?retryWrites=true&w=majority`;
 
 app.use('/', routes);
 app.get('/', (req,res)=>{
