@@ -1,15 +1,21 @@
 import React from 'react';
-// import { BrowserRouter, Routes } from 'react-router-dom';
+import { Routes as Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/App.scss';
 
-import Landingpage from './components/Landingpage';
+// navbar component
+import Navbar from './components/Navbar/Navbar';
+
+// components
+import Landingpage from './components/Landingpage/Landingpage';
 
 const App = () => {
 
   return (
     <div className='App col-lg-12 m-0 p-0'>
-      <Landingpage />
+      <Switch>
+        <Route path='/home' element={<><Navbar/><Landingpage/></>}/>
+      </Switch>
     </div>
   )
 }

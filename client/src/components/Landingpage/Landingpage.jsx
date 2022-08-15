@@ -3,17 +3,9 @@ import axios from 'axios';
 import { FaSearch, FaAngleDoubleDown } from 'react-icons/fa';
 import { useEffect, useState, useRef } from 'react';
 
-// API
-import { baseAPI } from '../api/api.js';
-
 // scss
-import '../scss/Landingpage.scss';
+import '../../scss/Landingpage.scss';
 
-// img
-import title from '../img/title.png';
-
-// reusable components
-import Button from '../ReusableComponents/Button';
 
 const Landingpage = () => {
 

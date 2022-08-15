@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+:root {
+    --bg-transparent: none;
+    --bg-base-color: white;
+    --bg-main: rgb(19, 19, 19);
+    --bg-div: rgb(79, 19, 107);
+    --text-font: 'Raleway', sans-serif;
+    --text-hover: rgba($color: #f3aa21, $alpha: 1.0);
+}
+
+@mixin baseDisplay($backgroundColor,$height,$width) {
+    background: $backgroundColor;
+    height: $height;
+    width: $width;
+}
+
+.Navbar{
+    @include baseDisplay(var(--bg-main),auto,100vw);
+    display: grid;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    .first-layer{
+        @include baseDisplay(var(--bg-transparent),6vh,70vw);
+        display: flex;
+        align-items: center;
+        position: relative;
+        .logo{
+            height: 3.5vh;
+        }
+        .inputFormContainer{
+            @include baseDisplay(var(--bg-base-color),auto,auto);
+            position: absolute;
+            top: 50;
+            right: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .searchIconContainer{
+                @include baseDisplay(var(--bg-base-color),3.8vh,2vw);
+                display: grid;
+                place-items: center;
+                border-radius: 0px;
+                border: 0px solid transparent;
+                .icon{
+                    color: rgb(49, 49, 49);
+                }
+            }
+            .searchFormInput{
+                transition: .3s; 
+                border-radius: 0px;   
+                height: 3.7vh;
+                width: 10vw;
+                padding: 0px 0px;
+                font-family: var(--text-font);
+                color: black;
+                outline: none;
+                border: 0px solid transparent;
+                font-size: .9em;
+            }
+            .searchFormInput:focus{
+                transition: .3s;
+                width: 20vw;
+            }
+        }
+    }
+    .second-layer{
+        @include baseDisplay(var(--bg-div),5vh,70vw);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .homeBtn{
+            @include baseDisplay(var(--bg-transparent),auto,auto);
+            display: grid;
+            place-items: center;
+            padding: 8px 16px;
+            margin-left: .5vw;
+            border: 0px solid transparent;
+            .text{
+                font-family: var(--text-font);
+                font-size: .9em;
+                color: #ffffff;
+            }
+        }
+        .homeBtn:hover{
+            background: var(--bg-main);
+            .text{
+                color: var(--bg-base-color);
+            }
+        }
+        .animelistBtn{
+            @include baseDisplay(var(--bg-transparent),auto,auto);
+            display: grid;
+            place-items: center;
+            padding: 8px 16px;
+            border: 0px solid transparent;
+            margin-left: .5vw;
+            .text{
+                font-family: var(--text-font);
+                font-size: .9em;
+                color: #ffffff;
+            }
+        }
+        .animelistBtn:hover{
+            background: var(--bg-main);
+            .text{
+                color: var(--bg-base-color);
+            }
+        }
+        .aboutusBtn{
+            @include baseDisplay(var(--bg-transparent),auto,auto);
+            display: grid;
+            place-items: center;
+            padding: 8px 16px;
+            border: 0px solid transparent;
+            margin-left: .5vw;
+            .text{
+                font-family: var(--text-font);
+                font-size: .9em;
+                color: #ffffff;
+            }
+        }
+        .aboutusBtn:hover{
+            background: var(--bg-main);
+            .text{
+                color: var(--bg-base-color);
+            }
+        }
+    }
+}
+
