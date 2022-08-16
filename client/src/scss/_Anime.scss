@@ -24,19 +24,18 @@
 }
 
 .Anime{
-    @include baseDisplay(var(--bg-main),50vh,100vw);
+    @include baseDisplay(var(--bg-main),auto,100vw);
     display: grid;
-    align-items: flex-start;
     justify-content: center;
     .animealphabetcontainer{
-        @include baseDisplay(var(--bg-transparent),4vh,70vw);
+        @include baseDisplay(var(--bg-div),4vh,70vw);
         margin-top: 4vh;
         display: flex;
         flex-direction: row;
         justify-content: center;
         .alphabets{
-            padding: 0px 20px;
-            background: var(--bg-transparent);
+            padding: 0px 21.5px;
+            background: var(--bg-main);
             border: 0px solid var(--bg-transparent);
             .text{
                 color: white;
@@ -44,8 +43,26 @@
             }
         }
         .alphabets:hover{
+            background: var(--bg-div);
             .text{
                 color: #f3aa21;
+            }
+        }
+    }
+    .animelistContainer{
+        @include baseDisplay(var(--bg-div),100vh,70vw);
+        margin-top: 2.5vh;
+        column-count: 2;
+    }
+    .footer{
+        @include baseDisplay(var(--bg-transparent),10vh,70vw);
+        margin-bottom: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .stack{
+            .pagination{
+                color: white;
             }
         }
     }
