@@ -20,5 +20,5 @@
 }
 
 .App{
-    @include baseDisplay(var(--bg-main),100vh,100vw);
+    @include baseDisplay(rgb(34, 34, 34),100vh,100vw);
 }

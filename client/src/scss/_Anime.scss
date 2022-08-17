@@ -24,7 +24,7 @@
 }
 
 .Anime{
-    @include baseDisplay(var(--bg-main),auto,100vw);
+    @include baseDisplay(var(--bg-transparent),auto,100vw);
     display: grid;
     justify-content: center;
     .animealphabetcontainer{
@@ -50,9 +50,24 @@
         }
     }
     .animelistContainer{
-        @include baseDisplay(var(--bg-div),100vh,70vw);
+        @include baseDisplay(var(--bg-transparent),100vh,70vw);
         margin-top: 2.5vh;
         column-count: 2;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        .animeBtn{
+            background: transparent;
+            border: 0px solid transparent;
+            .text{
+                color: white;
+            }
+        }
+        .animeBtn:hover{
+            .text{
+                color: #f3aa21;
+            }
+        }
     }
     .footer{
         @include baseDisplay(var(--bg-transparent),10vh,70vw);

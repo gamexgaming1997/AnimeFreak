@@ -33,7 +33,7 @@ const App = () => {
   return (
     <div className='App col-lg-12 m-0 p-0'>
       <Switch>
-        <Route path='/home' element={<><Navbar/><Landingpage/></>}/>
+        <Route path='/' element={<><Navbar/><Landingpage/></>}/>
         <Route path='/anime' element={<><Navbar/><Anime/></>}/>
       </Switch>
     </div>

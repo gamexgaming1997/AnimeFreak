@@ -33,7 +33,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className='second-layer'>
-                <Button className='homeBtn' Span='text' Text='home' handleClick={() => navigate('/home')}/>
+                <Button className='homeBtn' Span='text' Text='home' handleClick={() => navigate('/')}/>
                 <Button className='animelistBtn' Span='text' Text='anime' handleClick={() => navigate('/anime')}/>
                 <Button className='aboutusBtn' Span='text' Text='about'/>
                 <Button className='loginsignup' Span='text' Text='login'/>

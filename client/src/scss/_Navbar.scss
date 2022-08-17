@@ -24,7 +24,7 @@
 }
 
 .Navbar{
-    @include baseDisplay(var(--bg-main),auto,100vw);
+    @include baseDisplay(var(--bg-transparent),auto,100vw);
     display: grid;
     align-items: flex-start;
     justify-content: center;
