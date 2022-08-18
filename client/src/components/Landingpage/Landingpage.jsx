@@ -1,13 +1,24 @@
 import React from 'react';
 import axios from 'axios';
 import { FaSearch, FaAngleDoubleDown } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 import { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+//thunk
+import { get_mal_id_from_API } from '../../controller/thunk.js';
 
 // scss
 import '../../scss/_Landingpage.scss';
 
 
-const Landingpage = () => {
+const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
+
+  //dispatch
+  const dispatch = useDispatch();
+
+  //navigate
+  const navigate = useNavigate();
 
   // hooks
   const [textSearch, setTextSearch] = useState('');
@@ -53,6 +64,14 @@ const Landingpage = () => {
 
   // title,title_english,title_japanese,rating,mal_id,popularity,aired,
   // episodes,genres,score,status,sypnosis,title_synonyms,year 
+
+  const HandleGetID_Submit= (e) => {
+    e.preventDefault();
+    if(get_anime_id){
+      dispatch(get_mal_id_from_API(get_anime_id))
+      navigate(`/anime/view`)
+    }
+  }
 
   return (
     <div className='Landingpage col-lg-12'>
@@ -104,15 +123,19 @@ const Landingpage = () => {
 
               <div className='TopAnimeListContainer'>
                 {/* splice gets re-render when input */}
+
                 {topAnimeRemoveOne && Object.keys(topAnimeRemoveOne).map((state) => {
                   return (
-                    <div className='anime' key={topAnimeRemoveOne[state].mal_id}>
+                    <form onSubmit={HandleGetID_Submit} key={topAnimeRemoveOne[state].mal_id}>
+                    <div className='anime'>
                         <div className='imgContainer' style={{
                           backgroundImage: `url(${topAnimeRemoveOne[state].images.jpg.large_image_url})`
                         }}/>
                         <div className='detailsContainer'>
                           <div className='titleContainer'>
-                            <button className='text'>
+                            <button type='submit' className='text' onClick={()=>{
+                              setGet_Anime_ID(topAnimeRemoveOne[state].mal_id)
+                            }}>
                               {topAnimeRemoveOne[state].title}
                             </button>
                           </div>
@@ -146,6 +169,7 @@ const Landingpage = () => {
                           </div>
                         </div>
                     </div>
+                    </form>
                   )
                 })}
               </div>
