@@ -1,4 +1,5 @@
 import React from 'react';
+import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 
 //scss
@@ -25,6 +26,40 @@ const ViewAnime = ({ get_anime_id }) => {
               </span>
             </div>
 
+            {/* details */}
+            <div className='details'>
+              <div className='title'>
+                <span className='text'>
+                  {selected_anime?.title}
+                </span>
+              </div>
+              <div className='summary'>
+                <span className='text'>
+                  {selected_anime?.synopsis}
+                </span>
+              </div>
+              <div className='othertitle'>
+                <span className='text'>
+                  Other titles: {selected_anime?.title_english},{selected_anime?.title_japanese}
+                </span>
+              </div>
+              <div className='genre'>
+                 <span className='text'>
+                  Genre: {selected_anime?.genres.map(state => state.name)}
+                 </span>
+              </div>
+              <div className='episodes'>
+                 <span className='text'>
+                  Episodes: {selected_anime?.episodes}
+                 </span>
+              </div>
+              <div className='status'>
+                 <span className='text'>
+                  Status: {selected_anime?.status}
+                 </span>
+              </div>
+            </div>
+
           </div>
           <div className='suggestionContainer'>
 
@@ -34,6 +69,8 @@ const ViewAnime = ({ get_anime_id }) => {
                 Popular animes
               </span>
             </div>
+
+
 
           </div>
         </div>
