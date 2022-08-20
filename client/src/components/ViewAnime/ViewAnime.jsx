@@ -40,22 +40,22 @@ const ViewAnime = ({ get_anime_id }) => {
               </div>
               <div className='othertitle'>
                 <span className='text'>
-                  Other titles: {selected_anime?.title_english},{selected_anime?.title_japanese}
+                  Other titles: <span className='innerText'>{selected_anime?.title_english},{selected_anime?.title_japanese}</span>
                 </span>
               </div>
               <div className='genre'>
                  <span className='text'>
-                  Genre: {selected_anime?.genres.map(state => state.name)}
+                  Genre: <span className='innerText'>{selected_anime?.genres.map(state => state.name)}</span>
                  </span>
               </div>
               <div className='episodes'>
                  <span className='text'>
-                  Episodes: {selected_anime?.episodes}
+                  Episodes: <span className='innerText'>{selected_anime?.episodes}</span>
                  </span>
               </div>
               <div className='status'>
                  <span className='text'>
-                  Status: {selected_anime?.status}
+                  Status: <span className='innerText'>{selected_anime?.status}</span>
                  </span>
               </div>
             </div>

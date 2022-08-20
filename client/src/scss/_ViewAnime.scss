@@ -45,7 +45,7 @@
             justify-content: space-evenly;
             margin: 15px 0px 15px 0px;
             .detailsContainer{
-                @include baseDisplay(black,50vh,53vw);
+                @include baseDisplay(black,auto,53vw);
                 display: grid;
                 border-left: 2px solid var(--bg-div);
                 border-right: 2px solid var(--bg-div);
@@ -104,21 +104,36 @@
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
-                            line-height: 30px;
                             padding: 0px 20px;
+                            margin-bottom: 1vh;
+                            .innerText{
+                                font-family: var(--text-font);
+                                color: white;
+                            }
+                            .innerText:hover{
+                                cursor: pointer;
+                                color: #f3aa21;
+                            }
                         }
                     }
                     .genre{
                         @include baseDisplay(var(--bg-transparent),4vh,53vw);
                         display: flex;
-                        align-items: flex-end;
+                        align-items: center;
                         justify-content: flex-start;
                         .text{
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
-                            line-height: 30px;
                             padding: 0px 20px;
+                            .innerText{
+                                font-family: var(--text-font);
+                                color: white;
+                            }
+                            .innerText:hover{
+                                cursor: pointer;
+                                color: #f3aa21;
+                            }
                         }
                     }
                     .episodes{
@@ -130,8 +145,15 @@
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
-                            line-height: 30px;
                             padding: 0px 20px;
+                            .innerText{
+                                font-family: var(--text-font);
+                                color: white;
+                            }
+                            .innerText:hover{
+                                cursor: pointer;
+                                color: #f3aa21;
+                            }
                         }
                     }
                     .status{
@@ -139,12 +161,20 @@
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
+                        margin-bottom: 2vh;
                         .text{
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
-                            line-height: 30px;
                             padding: 0px 20px;
+                            .innerText{
+                                font-family: var(--text-font);
+                                color: white;
+                            }
+                            .innerText:hover{
+                                cursor: pointer;
+                                color: #f3aa21;
+                            }
                         }
                     }
                 }
