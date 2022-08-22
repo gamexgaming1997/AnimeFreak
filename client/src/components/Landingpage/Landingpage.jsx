@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { FaSearch, FaAngleDoubleDown } from 'react-icons/fa';
+import { FaAngleDoubleDown } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -14,10 +14,10 @@ import '../../scss/_Landingpage.scss';
 
 const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
 
-  //dispatch
+  //call action for redux thunk
   const dispatch = useDispatch();
 
-  //navigate
+  //for navigating specific endpoint
   const navigate = useNavigate();
 
   // hooks
@@ -27,7 +27,7 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
   const [upcomingAnime, setUpcomingAnime] = useState([]);
   const [limitIncrement, setLimitIncrement] = useState(10);
 
-  //ref
+  //refs cover photo
   const AnimeImg = useRef(null);
 
   useEffect(()=>{

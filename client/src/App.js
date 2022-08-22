@@ -33,7 +33,6 @@ const App = () => {
     data();
   },[])
 
-
   return (
     <div className='App col-lg-12 m-0 p-0'>
       <Switch>
