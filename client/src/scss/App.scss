@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
 :root {
     --bg-main: black;
     --bg-div: rgb(90, 11, 114);

@@ -194,10 +194,32 @@
                         margin-left: .5vw;
                     }
                 }  
+
             }
             .popularanimelistContainer{
-                @include baseDisplay(red,31vh,53vw);
-
+                @include baseDisplay(var(--bg-transparent),31vh,53vw);
+                column-count: 1;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                padding: 20px 10px;
+                .animesNames{
+                    border: 0px solid var(--bg-transparent);
+                    background: var(--bg-transparent);
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin: 2px;
+                    .text{
+                        color: white;
+                        font-family: var(--text-font);
+                    }
+                }
+                .animesNames:hover{
+                    .text{
+                        color: #f3aa21;
+                    }
+                }
             }
         }
         .innerContainer-2{
@@ -246,8 +268,28 @@
                     }
                 }
                 .suggestionslistContainer{
-                    @include baseDisplay(red,30vh,16vw);
-                    text-align: left;
+                    @include baseDisplay(var(--bg-transparent),30vh,16vw);
+                    text-align: justify;
+                    .animeTitleBtn{
+                        border: 0px solid var(--bg-transparent);
+                        background: var(--bg-transparent);
+                        width: 16vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin: 5px 0px 0px 0px;
+                        .text{
+                            margin-left: .5vw;
+                            color: white;
+                            font-family: var(--text-font);
+                            font-size: .9em;
+                        }
+                    }
+                    .animeTitleBtn:hover{
+                        .text{
+                            color: #f3aa21;
+                        }
+                    }
                 }
             }
         }
