@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+:root {
+    --bg-transparent: none;
+    --bg-base-color: white;
+    --bg-main: rgb(19, 19, 19);
+    --bg-div: rgb(79, 19, 107);
+    --text-font: 'Raleway', sans-serif;
+    --text-hover: rgba($color: #f3aa21, $alpha: 1.0);
+}
+
+@mixin baseDisplay($backgroundColor,$height,$width) {
+    background: $backgroundColor;
+    height: $height;
+    width: $width;
+}
+
+.top{
+    @include baseDisplay(var(--bg-main),7vh,100vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    .innerContainer{
+        @include baseDisplay(red,6vh,70vw);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .inputFormContainer{
+            background: rgba($color: #000000, $alpha: 1.0);
+            min-height: 5vh;
+            max-height: auto;
+            width: 20vw;
+            display: grid;
+            z-index: 999;
+            position: absolute;
+            margin-top: .01vh;
+            // .searchContainer{
+            //     height: 4vh;
+            //     width: 20vw;
+            //     background: green;
+            // }
+        }
+    }
+}

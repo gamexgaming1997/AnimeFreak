@@ -8,6 +8,7 @@ import './scss/App.scss';
 import Navbar from './components/Navbar/Navbar';
 
 // components
+import Top from './components/Top/Top';
 import Landingpage from './components/Landingpage/Landingpage';
 import Anime from './components/Anime/Anime';
 import ViewAnime from './components/ViewAnime/ViewAnime';
@@ -36,9 +37,9 @@ const App = () => {
   return (
     <div className='App col-lg-12 m-0 p-0'>
       <Switch>
-        <Route path='/' element={<><Navbar/><Landingpage setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} /></>}/>
-        <Route path='/anime' element={<><Navbar/><Anime/></>}/>
-        <Route path={get_anime_id ? `/anime/view` : `/`} element={<><Navbar/><ViewAnime get_anime_id={get_anime_id} /></>}/>
+        <Route path='/' element={<><Top/><Navbar/><Landingpage setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} /></>}/>
+        <Route path='/anime' element={<><Top/><Navbar/><Anime/></>}/>
+        <Route path={get_anime_id ? `/anime/view` : `/`} element={<><Top/><Navbar/><ViewAnime get_anime_id={get_anime_id} /></>}/>
       </Switch>
     </div>
   )

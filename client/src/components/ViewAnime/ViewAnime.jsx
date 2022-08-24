@@ -76,14 +76,14 @@ const ViewAnime = ({ get_anime_id }) => {
               {/* container 1 */}
               <div className='innerContainer-1'>
                 <div className='detailsContainer'>
-      
+
                   {/* label here */}
                   <div className='titleContainer'>
                     <span className='text'>
                       {selected_anime?.title}
                     </span>
                   </div>
-      
+
                   {/* details */}
                   <div className='details'>
                     <div className='title'>
@@ -117,17 +117,17 @@ const ViewAnime = ({ get_anime_id }) => {
                        </span>
                     </div>
                   </div>
-      
+
                 </div>
                 <div className='suggestionContainer'>
-      
+
                   {/* label here */}
                   <div className='titleContainer'>
                     <span className='text'>
                       Popular animes
                     </span>
                   </div>
-      
+
                   <div className='popularanimelistContainer'>
                       {topAnimes && Object.keys(topAnimes).map(state => {
                         return (
