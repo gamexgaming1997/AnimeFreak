@@ -20,33 +20,22 @@ const Navbar = () => {
     <header>
         <nav className='Navbar'>
 
-            {/* <div className='first-layer'> */}
-
-                {/* <img src={title} className='logo'/> */}
-                {/* <div className='inputFormContainer'>
-
-                    <input type='text' placeholder='Search' onChange={(e)=> {
-                        return setTextSearch(e.target.value)
-                    }}
-                    className='searchFormInput'
-                    />
-
-                </div> */}
-
-                {/* <div className='inputFormContainer'>
-                    <input className='searchBar'/>
-                    <div className='animeMapper'>
-                        
-                    </div>
-                </div> */}
-
             {/* </div> */}
 
             <div className='second-layer'>
-                <Button className='homeBtn' Span='text' Text='home' handleClick={() => navigate('/')}/>
-                <Button className='animelistBtn' Span='text' Text='anime' handleClick={() => navigate('/anime')}/>
+                <Button className='homeBtn' Span='text' Text='home' handleClick={() => {
+                  navigate('/');
+                  window.location.reload();
+                }}/>
+                <Button className='animelistBtn' Span='text' Text='anime' handleClick={() => {
+                  navigate('/anime');
+                  window.location.reload();
+                }}/>
                 <Button className='aboutusBtn' Span='text' Text='about'/>
-                <Button className='loginsignup' Span='text' Text='login' handleClick={()=> navigate('/login')}/>
+                <Button className='loginsignup' Span='text' Text='login' handleClick={()=> {
+                  navigate('/login');
+                  window.location.reload();
+                }}/>
             </div>
 
         </nav>

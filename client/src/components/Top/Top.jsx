@@ -1,22 +1,39 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //scss
 import '../../scss/_Top.scss';
 
-const Top = () => {
+// img logo
+import logo from '../../img/title.png';
+
+const Top = ({ setTitle, title }) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className='top'>
-        <div className='innerContainer'>
+      <div className='innerTopContainer'>
 
-            <div className='inputFormContainer'>
-                
-                <div className='searchContainer'>
-
-                </div>
-
-            </div>
-
+        <div className='logoContainer'>
+          <img src={logo} className='img'/>
         </div>
+
+        <div className='searchForm'>
+          <input className='input' placeholder='Search' onChange={(e)=>{
+            return setTitle(e.target.value)
+          }}
+          onKeyPress={(e)=>{
+            if(e.key === 'Enter'){
+              setInterval(() => {
+                return navigate(`/search/anime`)
+              }, 1000);
+            }
+          }}
+          />
+        </div>
+       
+      </div>
     </div>
   )
 }

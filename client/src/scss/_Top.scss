@@ -24,30 +24,42 @@
 }
 
 .top{
-    @include baseDisplay(var(--bg-main),7vh,100vw);
+    @include baseDisplay(var(--bg-transparent),7vh,100vw);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 99;
-    .innerContainer{
-        @include baseDisplay(red,6vh,70vw);
+    .innerTopContainer{
+        @include baseDisplay(var(--bg-transparent),6vh,70vw);
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        .inputFormContainer{
-            background: rgba($color: #000000, $alpha: 1.0);
-            min-height: 5vh;
-            max-height: auto;
-            width: 20vw;
-            display: grid;
-            z-index: 999;
+        position: relative;
+        .logoContainer{
+            @include baseDisplay(var(--bg-transparent),6vh,15vw);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .img{
+                height: 3.5vh;
+            }
+        }
+        .searchForm{
+            @include baseDisplay(var(--bg-transparent),6vh,20vw);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
             position: absolute;
-            margin-top: .01vh;
-            // .searchContainer{
-            //     height: 4vh;
-            //     width: 20vw;
-            //     background: green;
-            // }
+            right: 0;
+            .input{
+                height: 3.5vh;
+                width: 15vw;
+                padding: 12px 12px;
+                transition: .3s;
+                outline: none;
+                border: 0px solid transparent;
+                font-family: var(--text-font);
+            }
+            .input:focus{
+                width: 20vw;
+            }
         }
     }
 }
