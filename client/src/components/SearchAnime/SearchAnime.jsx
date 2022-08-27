@@ -2,6 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+// scss
+import '../../scss/_SearchAnime.scss';
+
 const SearchAnime = ({ title }) => {
 
     const [anime, setAnime] = useState();
@@ -18,11 +21,33 @@ const SearchAnime = ({ title }) => {
         fetch();
     },[title])
 
-    console.log(anime);
+    console.log(anime)
+
+    //anime.images.jpg.image_url/large_image_url/small_image_url
 
   return (
-    <div>
+    <div className='animeResultContainer'>
+      <div className='innerContainer'>
 
+        <div className='titleContainer'>
+          <span className='text'>
+            Result 0 - {anime?.length}
+          </span>
+        </div>
+
+        <div className='animeList'>
+          {anime && Object.keys(anime).map(state => {
+            return (
+              <div className='AnimeContainer' key={anime[state].mal_id}>
+                <div className='coverContainer' style={{ backgroundImage: `url(${anime[state]?.images.jpg.image_url})` }}>
+
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+      </div>
     </div>
   )
 }
