@@ -44,7 +44,7 @@ const App = () => {
         <Route path='/' element={<><Top title={title} setTitle={setTitle} /><Navbar/><Landingpage setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} /></>}/>
         <Route path='/anime' element={<><Top/><Navbar/><Anime/></>}/>
         <Route path={get_anime_id ? `/anime/view` : `/`} element={<><Top/><Navbar/><ViewAnime get_anime_id={get_anime_id} /></>}/>
-        <Route path='/search/anime' element={<><Top title={title} setTitle={setTitle}/><Navbar/><SearchAnime title={title}/></>}/>
+        <Route path='/search/anime' element={<><Top title={title} setTitle={setTitle}/><Navbar/><SearchAnime title={title} setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} setTitle={setTitle}/></>}/>
       </Switch>
     </div>
   )

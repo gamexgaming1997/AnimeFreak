@@ -14,8 +14,6 @@ const Navbar = () => {
 
     const navigate = useNavigate();
 
-    const [textSearch, setTextSearch] = useState('');
-
   return (
     <header>
         <nav className='Navbar'>

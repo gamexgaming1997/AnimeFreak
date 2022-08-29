@@ -80,8 +80,14 @@
                         align-items: center;
                         justify-content: flex-start;
                         .text{
+                            border: 0px solid transparent;
+                            background: var(--bg-transparent);
                             font-family: var(--text-font);
                             font-size: 1.3em;
+                            color: #ffffff;
+                        }
+                        .text:hover{
+                            color: #f3aa21;
                         }
                     }
                     .sypnosisContainer{
