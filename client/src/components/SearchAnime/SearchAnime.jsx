@@ -21,9 +21,9 @@ const SearchAnime = ({ title }) => {
         fetch();
     },[title])
 
-    console.log(anime)
-
     //anime.images.jpg.image_url/large_image_url/small_image_url
+
+
 
   return (
     <div className='animeResultContainer'>
@@ -36,11 +36,34 @@ const SearchAnime = ({ title }) => {
         </div>
 
         <div className='animeList'>
-          {anime && Object.keys(anime).map(state => {
+          {anime && Object.keys(anime).map((state,key) => {
             return (
-              <div className='AnimeContainer' key={anime[state].mal_id}>
-                <div className='coverContainer' style={{ backgroundImage: `url(${anime[state]?.images.jpg.image_url})` }}>
-
+              <div className='AnimeContainer' key={anime[state]?.mal_id}>
+                <div className='coverContainer' style={{ backgroundImage: `url(${anime[state]?.images.jpg.image_url})` }}/>
+                <div className='detailsContainer'>
+                  <div className='titleContainer'>
+                    <span className='text'>
+                      {anime[state]?.title}
+                    </span>
+                  </div>
+                  <div className='sypnosisContainer'>
+                    <span className='text'>
+                      Summary: &nbsp;
+                      {anime[state]?.synopsis}
+                    </span>
+                  </div>
+                </div>
+                <div className='detailsContainer-2'>
+                  <div className='labelContainer'>
+                    <span className='text'>
+                      Popularity 
+                    </span>
+                  </div>
+                  <div className='popularityContainer'>
+                    <span className='text'>
+                      {anime[state]?.popularity}
+                    </span>
+                  </div>
                 </div>
               </div>
             )

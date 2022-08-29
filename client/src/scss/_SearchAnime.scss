@@ -68,6 +68,62 @@
                     height: 20vh;
                     width: 7vw;
                 }
+                .detailsContainer{
+                    @include baseDisplay(var(--bg-transparent),20vh,50vw);
+                    // border-left: 4px solid rgb(40, 7, 83);
+                    margin-left: 1vw;
+                    display: flex;
+                    flex-direction: column;
+                    .titleContainer{
+                        @include baseDisplay(var(--bg-div),8vh,50vw);
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            font-family: var(--text-font);
+                            font-size: 1.3em;
+                        }
+                    }
+                    .sypnosisContainer{
+                        @include baseDisplay(var(--bg-transparent),12vh,50vw);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: justify;
+                        .text{
+                            font-family: var(--text-font);
+                            font-size: .6em;
+                            color: white;
+                            padding: 0px 20px;
+                        }
+                    }
+                }
+                .detailsContainer-2{
+                    @include baseDisplay(var(--bg-transparent),20vh,10vw);
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    .labelContainer{
+                        @include baseDisplay(var(--bg-div),8vh,10vw);
+                        display: grid;
+                        place-items: center;
+                        .text{
+                            font-family: var(--text-font);
+                            font-size: 1.5em;
+                            color: white;
+                        }
+                    }
+                    .popularityContainer{
+                        @include baseDisplay(var(--bg-transparent),12vh,10vw);
+                        display: grid;
+                        place-items: center;
+                        .text{
+                            font-family: var(--text-font);
+                            font-size: 2em;
+                            color: white;
+                        }
+                    }
+                }
             }
         }
     }
