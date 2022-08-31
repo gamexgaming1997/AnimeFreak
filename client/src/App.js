@@ -13,6 +13,8 @@ import Landingpage from './components/Landingpage/Landingpage';
 import Anime from './components/Anime/Anime';
 import ViewAnime from './components/ViewAnime/ViewAnime';
 import SearchAnime from './components/SearchAnime/SearchAnime';
+import Footer from './components/Footer/Footer';
+import About from './components/About/About';
 
 //hooks
 import { useEffect, useState } from 'react';
@@ -41,10 +43,11 @@ const App = () => {
   return (
     <div className='App col-lg-12 m-0 p-0'>
       <Switch>
-        <Route path='/' element={<><Top title={title} setTitle={setTitle} /><Navbar/><Landingpage setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} /></>}/>
-        <Route path='/anime' element={<><Top/><Navbar/><Anime/></>}/>
-        <Route path={get_anime_id ? `/anime/view` : `/`} element={<><Top/><Navbar/><ViewAnime get_anime_id={get_anime_id} /></>}/>
-        <Route path='/search/anime' element={<><Top title={title} setTitle={setTitle}/><Navbar/><SearchAnime title={title} setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} setTitle={setTitle}/></>}/>
+        <Route path='/' element={<><Top title={title} setTitle={setTitle} /><Navbar/><Landingpage setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} /><Footer/></>}/>
+        <Route path='/anime' element={<><Top title={title} setTitle={setTitle} /><Navbar/><Anime setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} /><Footer/></>}/>
+        <Route path={get_anime_id ? `/anime/view` : `/`} element={<><Top title={title} setTitle={setTitle} /><Navbar/><ViewAnime get_anime_id={get_anime_id} /><Footer/></>}/>
+        <Route path='/search/anime' element={<><Top title={title} setTitle={setTitle}/><Navbar/><SearchAnime title={title} setGet_Anime_ID={setGet_Anime_ID} get_anime_id={get_anime_id} setTitle={setTitle}/><Footer/></>}/>
+        <Route path='/About' element={<><Top title={title} setTitle={setTitle}/><Navbar/><About/><Footer/></>}/>
       </Switch>
     </div>
   )

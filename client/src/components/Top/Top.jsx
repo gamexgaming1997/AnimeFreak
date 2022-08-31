@@ -25,9 +25,7 @@ const Top = ({ setTitle, title }) => {
           }}
           onKeyPress={(e)=>{
             if(e.key === 'Enter'){
-              setInterval(() => {
-                return navigate(`/search/anime`)
-              }, 1000);
+              navigate(`/search/anime`)
             }
           }}
           />

@@ -29,11 +29,12 @@ const Navbar = () => {
                   navigate('/anime');
                   window.location.reload();
                 }}/>
-                <Button className='aboutusBtn' Span='text' Text='about'/>
-                <Button className='loginsignup' Span='text' Text='login' handleClick={()=> {
-                  navigate('/login');
+                <Button className='aboutusBtn' Span='text' Text='about'
+                handleClick={() => {
+                  navigate('/about');
                   window.location.reload();
-                }}/>
+                }}
+                />
             </div>
 
         </nav>
