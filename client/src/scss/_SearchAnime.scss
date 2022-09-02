@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,86 +17,98 @@
     --text-hover: rgba($color: #f3aa21, $alpha: 1.0);
 }
 
-@mixin baseDisplay($backgroundColor,$height,$width) {
+@mixin baseDisplay($backgroundColor, $height, $width) {
     background: $backgroundColor;
     height: $height;
     width: $width;
 }
 
-.animeResultContainer{
-    @include baseDisplay(var(--bg-transparent),auto,100vw);
+.animeResultContainer {
+    @include baseDisplay(var(--bg-transparent), auto, 100vw);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 4vh;
     margin-bottom: 10vh;
-    .innerContainer{
-        @include baseDisplay(black,auto,70vw);
+
+    .innerContainer {
+        @include baseDisplay(black, auto, 70vw);
         display: flex;
         align-items: flex-start;
         flex-direction: column;
         flex-wrap: wrap;
-        .titleContainer{
-            @include baseDisplay(var(--bg-div),5vh,70vw);
+
+        .titleContainer {
+            @include baseDisplay(var(--bg-div), 5vh, 70vw);
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            .text{
+
+            .text {
                 margin-left: 1vw;
                 color: white;
                 font-family: var(--text-font);
             }
         }
-        .animeList{
-            @include baseDisplay(black,auto,70vw);
+
+        .animeList {
+            @include baseDisplay(black, auto, 70vw);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
             padding: 10px 0px;
-            .AnimeContainer{
-                @include baseDisplay(rgb(14, 14, 14),20vh,68vw);
+
+            .AnimeContainer {
+                @include baseDisplay(rgb(14, 14, 14), 20vh, 68vw);
                 margin: 5px 0px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: flex-start;
-                .coverContainer{
+
+                .coverContainer {
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
                     height: 20vh;
                     width: 7vw;
                 }
-                .detailsContainer{
-                    @include baseDisplay(var(--bg-transparent),20vh,50vw);
+
+                .detailsContainer {
+                    @include baseDisplay(var(--bg-transparent), 20vh, 50vw);
                     // border-left: 4px solid rgb(40, 7, 83);
                     margin-left: 1vw;
                     display: flex;
                     flex-direction: column;
-                    .titleContainer{
-                        @include baseDisplay(var(--bg-div),8vh,50vw);
+
+                    .titleContainer {
+                        @include baseDisplay(var(--bg-div), 8vh, 50vw);
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
-                        .text{
+
+                        .text {
                             border: 0px solid transparent;
                             background: var(--bg-transparent);
                             font-family: var(--text-font);
                             font-size: 1.3em;
                             color: #ffffff;
                         }
-                        .text:hover{
+
+                        .text:hover {
                             color: #f3aa21;
                         }
                     }
-                    .sypnosisContainer{
-                        @include baseDisplay(var(--bg-transparent),12vh,50vw);
+
+                    .sypnosisContainer {
+                        @include baseDisplay(var(--bg-transparent), 12vh, 50vw);
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         text-align: justify;
-                        .text{
+
+                        .text {
                             font-family: var(--text-font);
                             font-size: .6em;
                             color: white;
@@ -104,26 +116,31 @@
                         }
                     }
                 }
-                .detailsContainer-2{
-                    @include baseDisplay(var(--bg-transparent),20vh,10vw);
+
+                .detailsContainer-2 {
+                    @include baseDisplay(var(--bg-transparent), 20vh, 10vw);
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
-                    .labelContainer{
-                        @include baseDisplay(var(--bg-div),8vh,10vw);
+
+                    .labelContainer {
+                        @include baseDisplay(var(--bg-div), 8vh, 10vw);
                         display: grid;
                         place-items: center;
-                        .text{
+
+                        .text {
                             font-family: var(--text-font);
                             font-size: 1.5em;
                             color: white;
                         }
                     }
-                    .popularityContainer{
-                        @include baseDisplay(var(--bg-transparent),12vh,10vw);
+
+                    .popularityContainer {
+                        @include baseDisplay(var(--bg-transparent), 12vh, 10vw);
                         display: grid;
                         place-items: center;
-                        .text{
+
+                        .text {
                             font-family: var(--text-font);
                             font-size: 2em;
                             color: white;
@@ -134,4 +151,3 @@
         }
     }
 }
-

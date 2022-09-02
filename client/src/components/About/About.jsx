@@ -6,9 +6,9 @@ import '../../scss/_About.scss';
 const About = () => {
   return (
     <div className='about'>
-        <span className='text'>
-            nothing to encode uwu
-        </span>
+      <span className='text'>
+        nothing to encode uwu
+      </span>
     </div>
   )
 }

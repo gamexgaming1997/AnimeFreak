@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,12 +17,12 @@
     --text-color: rgba($color: #ffffff, $alpha: 1.0);
 }
 
-@mixin baseDisplay($backgroundColor,$height,$width) {
+@mixin baseDisplay($backgroundColor, $height, $width) {
     background: $backgroundColor;
     height: $height;
     width: $width;
 }
 
-.App{
-    @include baseDisplay(rgb(19, 19, 19),100vh,100vw);
+.App {
+    @include baseDisplay(rgb(19, 19, 19), 100vh, 100vw);
 }
