@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import './include_media.scss';
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,21 +18,45 @@
     --text-hover: rgba($color: #f3aa21, $alpha: 1.0);
 }
 
-@mixin baseDisplay($backgroundColor,$height,$width) {
+@mixin baseDisplay($backgroundColor, $height, $width) {
     background: $backgroundColor;
     height: $height;
     width: $width;
 }
 
-.Footer{
-    @include baseDisplay(var(--bg-main),10vh,100vw);
+.Footer {
+    @include baseDisplay(var(--bg-main), 10vh, 100vw);
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    .text{
+
+    .text {
         font-family: var(--text-font);
         font-size: 1em;
         color: white;
         margin-top: 2vh;
+    }
+}
+
+@include media('<=Ipad') {
+    .Footer {
+        @include baseDisplay(var(--bg-transparent), 5vh, 100vw);
+
+        .text {
+            font-family: var(--text-font);
+            font-size: 1em;
+            color: white;
+            margin-top: 1vh;
+        }
+    }
+}
+
+@include media('<=Tablet') {
+    .Footer {
+        @include baseDisplay(var(--bg-transparent), 5vh, 100vw);
+
+        .text {
+            font-size: .8em;
+        }
     }
 }

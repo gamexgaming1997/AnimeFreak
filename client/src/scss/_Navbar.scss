@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import './include_media.scss';
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,176 +18,208 @@
     --text-hover: rgba($color: #f3aa21, $alpha: 1.0);
 }
 
-@mixin baseDisplay($backgroundColor,$height,$width) {
+@mixin baseDisplay($backgroundColor, $height, $width) {
     background: $backgroundColor;
     height: $height;
     width: $width;
 }
 
-.Navbar{
-    @include baseDisplay(var(--bg-transparent),auto,100vw);
+.Navbar {
+    @include baseDisplay(var(--bg-transparent), auto, 100vw);
     display: grid;
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    // .first-layer{
-    //     @include baseDisplay(red,6vh,70vw);
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: flex-end;
-    //     .logo{
-    //         height: 3.5vh;
-    //     }
-    //     .inputFormContainer{
-    //         @include baseDisplay(green,auto,auto);
-    //         position: absolute;
-    //         top: 50;
-    //         right: 0;
-    //         display: flex;
-    //         flex-direction: column;
-    //         align-items: center;
-    //         justify-content: center;
-    //         .searchIconContainer{
-    //             @include baseDisplay(var(--bg-base-color),3.8vh,2vw);
-    //             display: grid;
-    //             place-items: center;
-    //             border-radius: 0px;
-    //             border: 0px solid transparent;
-    //             .icon{
-    //                 color: rgb(49, 49, 49);
-    //             }
-    //         }
-    //         .searchFormInput{
-    //                 transition: .3s; 
-    //                 border-radius: 0px;   
-    //                 height: 3.7vh;
-    //                 width: 10vw;
-    //                 padding: 0px 0px;
-    //                 font-family: var(--text-font);
-    //                 color: black;
-    //                 outline: none;
-    //                 border: 0px solid transparent;
-    //                 font-size: .9em;
-    //                 padding: 12px 12px;
-    //         }
-    //         .searchFormInput:focus{
-    //                 transition: .3s;
-    //                 width: 20vw;
-    //         }
 
-    //         // mapper
-    //         .animeMapper{
-    //             background: rgba($color: #000000, $alpha: 1.0);
-    //             height: 5vh;
-    //             width: 20vw;
-    //         }
-
-    //     }
-    //     .inputFormContainer{
-    //         background: rgba($color: #000000, $alpha: 1.0);
-    //         min-height: 4vh;
-    //         max-height: auto;
-    //         width: 20vw;
-    //         display: flex;
-    //         flex-direction: column;
-    //         margin-top: 5vh;
-    //         .searchBar{
-    //             height: 4vh;
-    //             width: 20vw;
-                
-    //         }
-    //         .animeMapper{
-    //             background: rgba($color: #af3636, $alpha: 1.0);
-    //             height: 4vh;
-    //             width: 20vw;
-    //         }
-    //     }
-    // }
-    .second-layer{
-        @include baseDisplay(var(--bg-div),5vh,70vw);
+    .second-layer {
+        @include baseDisplay(var(--bg-div), 5vh, 70vw);
         display: flex;
         flex-direction: row;
         align-items: center;
         position: relative;
-        .homeBtn{
-            @include baseDisplay(var(--bg-transparent),auto,auto);
+
+        .homeBtn {
+            @include baseDisplay(var(--bg-transparent), auto, auto);
             display: grid;
             place-items: center;
             padding: 8px 16px;
             margin-left: .5vw;
             border: 0px solid transparent;
-            .text{
+
+            .text {
                 font-family: var(--text-font);
                 font-size: .9em;
                 color: #ffffff;
             }
         }
-        .homeBtn:hover{
+
+        .homeBtn:hover {
             background: var(--bg-main);
-            .text{
+
+            .text {
                 color: var(--bg-base-color);
             }
         }
-        .animelistBtn{
-            @include baseDisplay(var(--bg-transparent),auto,auto);
+
+        .animelistBtn {
+            @include baseDisplay(var(--bg-transparent), auto, auto);
             display: grid;
             place-items: center;
             padding: 8px 16px;
             border: 0px solid transparent;
             margin-left: .5vw;
-            .text{
+
+            .text {
                 font-family: var(--text-font);
                 font-size: .9em;
                 color: #ffffff;
             }
         }
-        .animelistBtn:hover{
+
+        .animelistBtn:hover {
             background: var(--bg-main);
-            .text{
+
+            .text {
                 color: var(--bg-base-color);
             }
         }
-        .aboutusBtn{
-            @include baseDisplay(var(--bg-transparent),auto,auto);
+
+        .aboutusBtn {
+            @include baseDisplay(var(--bg-transparent), auto, auto);
             display: grid;
             place-items: center;
             padding: 8px 16px;
             border: 0px solid transparent;
             margin-left: .5vw;
-            .text{
+
+            .text {
                 font-family: var(--text-font);
                 font-size: .9em;
                 color: #ffffff;
             }
         }
-        .aboutusBtn:hover{
+
+        .aboutusBtn:hover {
             background: var(--bg-main);
-            .text{
-                color: var(--bg-base-color);
-            }
-        }
-        .loginsignup{
-            @include baseDisplay(var(--bg-transparent),auto,auto);
-            display: grid;
-            place-items: center;
-            padding: 8px 16px;
-            margin-left: .5vw;
-            border: 0px solid transparent;
-            position: absolute;
-            right: 0;
-            margin-right: .5vw;
-            .text{
-                font-family: var(--text-font);
-                font-size: .9em;
-                color: #ffffff;
-            }
-        }
-        .loginsignup:hover{
-            background: var(--bg-main);
-            .text{
+
+            .text {
                 color: var(--bg-base-color);
             }
         }
     }
 }
 
+@include media('<=Ipad') {
+    .Navbar {
+        @include baseDisplay(var(--bg-transparent), auto, 100vw);
+
+        .second-layer {
+            @include baseDisplay(var(--bg-div), 3vh, 90vw);
+
+
+            .homeBtn {
+                @include baseDisplay(var(--bg-transparent), auto, auto);
+                display: grid;
+                place-items: center;
+                padding: 8px 16px;
+                margin-left: .5vw;
+                border: 0px solid transparent;
+
+                .text {
+                    font-family: var(--text-font);
+                    font-size: .9em;
+                    color: #ffffff;
+                }
+            }
+
+            .homeBtn:hover {
+                background: var(--bg-main);
+
+                .text {
+                    color: var(--bg-base-color);
+                }
+            }
+
+            .animelistBtn {
+                @include baseDisplay(var(--bg-transparent), auto, auto);
+                display: grid;
+                place-items: center;
+                padding: 8px 16px;
+                border: 0px solid transparent;
+                margin-left: .5vw;
+
+                .text {
+                    font-family: var(--text-font);
+                    font-size: .9em;
+                    color: #ffffff;
+                }
+            }
+
+            .animelistBtn:hover {
+                background: var(--bg-main);
+
+                .text {
+                    color: var(--bg-base-color);
+                }
+            }
+
+            .aboutusBtn {
+                @include baseDisplay(var(--bg-transparent), auto, auto);
+                display: grid;
+                place-items: center;
+                padding: 8px 16px;
+                border: 0px solid transparent;
+                margin-left: .5vw;
+
+                .text {
+                    font-family: var(--text-font);
+                    font-size: .9em;
+                    color: #ffffff;
+                }
+            }
+
+            .aboutusBtn:hover {
+                background: var(--bg-main);
+
+                .text {
+                    color: var(--bg-base-color);
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Tablet') {
+    .Navbar {
+        @include baseDisplay(var(--bg-transparent), auto, 100vw);
+
+        .second-layer {
+            @include baseDisplay(var(--bg-div), 3vh, 90vw);
+
+
+            .homeBtn {
+                @include baseDisplay(var(--bg-transparent), auto, auto);
+
+                .text {
+                    font-size: .8em;
+                }
+            }
+
+            .animelistBtn {
+                @include baseDisplay(var(--bg-transparent), auto, auto);
+
+                .text {
+                    font-size: .8em;
+                }
+            }
+
+            .aboutusBtn {
+                @include baseDisplay(var(--bg-transparent), auto, auto);
+
+                .text {
+                    font-size: .8em;
+                }
+            }
+        }
+    }
+}

@@ -323,6 +323,7 @@
     .Landingpage {
         .animeFormContainer {
             @include baseDisplay(black, auto, 90vw);
+            margin-top: 1vh;
 
             .titleContainer {
                 @include baseDisplay(var(--bg-div), 3vh, 90vw);
@@ -525,11 +526,10 @@
 
         // navigation
         .navigation {
-            @include baseDisplay(var(--bg-transparent), 6vh, 70vw);
-            margin-top: 4vh;
-            display: grid;
+            @include baseDisplay(var(--bg-transparent), 3vh, 90vw);
+            margin-top: 2vh;
             place-items: center;
-            margin-bottom: 5vh;
+            margin-bottom: 2vh;
 
             .moreBtn {
                 border: 0px solid var(--bg-transparent);
@@ -538,6 +538,195 @@
                 .text {
                     color: white;
                     font-family: var(--text-font);
+
+                    .icon {
+                        color: white;
+                        font-family: var(--text-font);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Tablet') {
+    .Landingpage {
+        .animeFormContainer {
+            @include baseDisplay(black, auto, 90vw);
+            margin-top: 1vh;
+
+            .titleContainer {
+                @include baseDisplay(var(--bg-div), 3vh, 90vw);
+
+                .text {
+                    font-size: 1em;
+                }
+            }
+
+            .TopAnimeContainer {
+                @include baseDisplay(var(--bg-transparent), auto, 90vw);
+
+                .topAnime {
+                    @include baseDisplay(var(--bg-transparent), 36.5vh, 90vw);
+
+                    .imgContainer {
+                        height: 35vh;
+                        width: 30vw;
+                    }
+
+                    .detailsContainer {
+                        @include baseDisplay(var(--bg-transparent), 35vh, 59vw);
+
+                        .titleContainer {
+                            @include baseDisplay(var(--bg-transparent), 5vh, 59vw);
+
+                            .text {
+                                font-size: 1.4em;
+                            }
+
+                        }
+
+                        .alterTitleContainer {
+                            @include baseDisplay(var(--bg-transparent), 2.5vh, 59vw);
+
+                            .text {
+                                margin-left: 1.5vw;
+                                font-family: var(--text-font);
+                                font-size: .7em;
+                                color: white;
+                            }
+                        }
+
+                        .sypnosisContainer {
+                            @include baseDisplay(var(--bg-transparent), 21vh, 59vw);
+
+                            .text {
+                                font-size: .6em;
+                                line-height: 16px;
+                            }
+
+                        }
+
+                        .genreContainer {
+                            @include baseDisplay(var(--bg-transparent), 4.5vh, 59vw);
+
+                            .text {
+                                font-size: .8em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .titleContainer-2 {
+                @include baseDisplay(var(--bg-div), 3vh, 90vw);
+
+                .text {
+                    font-size: 1em;
+                }
+            }
+
+            .TopAnimeListContainer {
+                @include baseDisplay(var(--bg-transparent), auto, 90vw);
+
+                .anime {
+                    @include baseDisplay(var(--bg-transparent), 25vh, 45vw);
+
+                    .imgContainer {
+                        @include baseDisplay(var(--bg-transparent), 23vh, 21vw);
+                        background-position: center center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+
+                    .detailsContainer {
+                        @include baseDisplay(var(--bg-transparent), 23vh, 21vw);
+                        display: flex;
+                        flex-direction: column;
+
+                        .titleContainer {
+                            @include baseDisplay(var(--bg-transparent), 4.5vh, 21vw);
+
+                            .text {
+                                font-size: clamp(1em, 10vw, 1em);
+                            }
+
+                        }
+
+                        .otherTitlesContainer {
+                            @include baseDisplay(var(--bg-transparent), 3vh, 21vw);
+
+                            .text {
+                                font-family: var(--text-font);
+                                color: white;
+                                margin-left: .5vw;
+                                font-size: clamp(.5em, 10vw, .6em);
+                                padding: 20px 0px;
+                            }
+                        }
+
+                        .popularityContainer {
+                            @include baseDisplay(var(--bg-transparent), 3vh, 21vw);
+
+                            .text {
+                                font-family: var(--text-font);
+                                color: white;
+                                margin-left: .5vw;
+                                font-size: clamp(.5em, 10vw, .6em);
+                                padding: 20px 0px;
+                            }
+                        }
+
+                        .airedContainer {
+                            @include baseDisplay(var(--bg-transparent), 4vh, 21vw);
+
+                            .text {
+                                font-family: var(--text-font);
+                                color: white;
+                                margin-left: .5vw;
+                                font-size: clamp(.5em, 10vw, .6em);
+                                padding: 20px 0px;
+                            }
+                        }
+
+                        .statusContainer {
+                            @include baseDisplay(var(--bg-transparent), 4vh, 21vw);
+
+                            .text {
+                                font-family: var(--text-font);
+                                color: white;
+                                margin-left: .5vw;
+                                font-size: clamp(.5em, 10vw, .6em);
+                                padding: 20px 0px;
+                            }
+                        }
+
+                        .ratingContainer {
+                            @include baseDisplay(var(--bg-transparent), 4.5vh, 21vw);
+
+                            .text {
+                                font-family: var(--text-font);
+                                color: white;
+                                margin-left: .5vw;
+                                font-size: clamp(.5em, 10vw, .6em);
+                                padding: 20px 0px;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+        // navigation
+        .navigation {
+            @include baseDisplay(var(--bg-transparent), 3vh, 90vw);
+
+            .moreBtn {
+
+                .text {
+                    font-size: .9em;
 
                     .icon {
                         color: white;
