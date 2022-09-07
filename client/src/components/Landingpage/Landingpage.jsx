@@ -72,8 +72,6 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
     }
   }
 
-  console.log(breakpoint)
-
   return (
     <div className='Landingpage col-lg-12'>
 
@@ -147,6 +145,7 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
                     </>
                   ) : (
                     <>
+
                     </>
                   )}
 
