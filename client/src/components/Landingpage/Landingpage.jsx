@@ -24,6 +24,7 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
   const [topAnime, setTopAnime] = useState([]);
   const [topAnimeRemoveOne, setTopAnimeRemoveOne] = useState([]);
   const [limitIncrement, setLimitIncrement] = useState(10);
+  const [breakpoint, setBreakpoint] = useState(window.matchMedia('(max-width: 416px)'));
 
   //refs cover photo
   const AnimeImg = useRef(null);
@@ -70,6 +71,8 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
       navigate(`/anime/view`)
     }
   }
+
+  console.log(breakpoint)
 
   return (
     <div className='Landingpage col-lg-12'>
@@ -124,50 +127,69 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
 
             {topAnimeRemoveOne && Object.keys(topAnimeRemoveOne).map((state) => {
               return (
-                <form onSubmit={HandleGetID_Submit} key={topAnimeRemoveOne[state].mal_id}>
-                  <div className='anime'>
-                    <div className='imgContainer' style={{
-                      backgroundImage: `url(${topAnimeRemoveOne[state].images.jpg.large_image_url})`
-                    }} />
-                    <div className='detailsContainer'>
-                      <div className='titleContainer'>
+                <div className='anime' key={topAnimeRemoveOne[state].mal_id}>
+                  <div className='imgContainer' style={{
+                    backgroundImage: `url(${topAnimeRemoveOne[state].images.jpg.large_image_url})`
+                  }} />
+
+                  {breakpoint.matches ? (
+                    <>
+                      <form onSubmit={HandleGetID_Submit}>
+                        <button className='titleContainerMobile'
+                          onClick={() => {
+                            setGet_Anime_ID(topAnimeRemoveOne[state]?.mal_id)
+                          }}>
+                          <span className='text'>
+                            {topAnimeRemoveOne[state]?.title}
+                          </span>
+                        </button>
+                      </form>
+                    </>
+                  ) : (
+                    <>
+                    </>
+                  )}
+
+                  <div className='detailsContainer'>
+                    <div className='titleContainer'>
+                      <form onSubmit={HandleGetID_Submit}>
                         <button type='submit' className='text' onClick={() => {
                           setGet_Anime_ID(topAnimeRemoveOne[state].mal_id)
                         }}>
                           {topAnimeRemoveOne[state].title}
                         </button>
-                      </div>
-                      <div className='otherTitlesContainer'>
-                        <span className='text'>
-                          Also known as: {topAnimeRemoveOne[state].title_english},{topAnimeRemoveOne[state].title_japanese}
-                        </span>
-                      </div>
-                      <div className='popularityContainer'>
-                        <span className='text'>
-                          Popularity: {topAnimeRemoveOne[state].popularity}
-                        </span>
-                      </div>
-                      <div className='airedContainer'>
-                        {/* aired.prop.from (day,month,year) & to (day,month,year)*/}
-                        <span className='text'>
-                          Aired: <br />
-                          From: {topAnimeRemoveOne[state]?.aired?.prop?.from.month}/{topAnimeRemoveOne[state]?.aired?.prop?.from.day}/{topAnimeRemoveOne[state]?.aired?.prop?.from.year} &nbsp;
-                          To: {topAnimeRemoveOne[state]?.aired?.prop?.to.month}/{topAnimeRemoveOne[state]?.aired?.prop?.to.day}/{topAnimeRemoveOne[state]?.aired?.prop?.to.year}
-                        </span>
-                      </div>
-                      <div className='statusContainer'>
-                        <span className='text'>
-                          Status: {topAnimeRemoveOne[state].status}
-                        </span>
-                      </div>
-                      <div className='ratingContainer'>
-                        <span className='text'>
-                          Rating: {topAnimeRemoveOne[state].rating}
-                        </span>
-                      </div>
+                      </form>
+                    </div>
+                    <div className='otherTitlesContainer'>
+                      <span className='text'>
+                        Also known as: {topAnimeRemoveOne[state].title_english},{topAnimeRemoveOne[state].title_japanese}
+                      </span>
+                    </div>
+                    <div className='popularityContainer'>
+                      <span className='text'>
+                        Popularity: {topAnimeRemoveOne[state].popularity}
+                      </span>
+                    </div>
+                    <div className='airedContainer'>
+                      {/* aired.prop.from (day,month,year) & to (day,month,year)*/}
+                      <span className='text'>
+                        Aired: <br />
+                        From: {topAnimeRemoveOne[state]?.aired?.prop?.from.month}/{topAnimeRemoveOne[state]?.aired?.prop?.from.day}/{topAnimeRemoveOne[state]?.aired?.prop?.from.year} &nbsp;
+                        To: {topAnimeRemoveOne[state]?.aired?.prop?.to.month}/{topAnimeRemoveOne[state]?.aired?.prop?.to.day}/{topAnimeRemoveOne[state]?.aired?.prop?.to.year}
+                      </span>
+                    </div>
+                    <div className='statusContainer'>
+                      <span className='text'>
+                        Status: {topAnimeRemoveOne[state].status}
+                      </span>
+                    </div>
+                    <div className='ratingContainer'>
+                      <span className='text'>
+                        Rating: {topAnimeRemoveOne[state].rating}
+                      </span>
                     </div>
                   </div>
-                </form>
+                </div>
               )
             })}
           </div>
