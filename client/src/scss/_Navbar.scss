@@ -290,6 +290,22 @@
                     font-size: .8em;
                 }
             }
+
+            .searchFormContainer {
+                @include baseDisplay(black, 5vh, 89.5vw);
+                display: grid;
+                align-items: center;
+                justify-content: center;
+
+                .SearchForm {
+                    font-family: var(--text-font);
+                    padding: 12px 16px;
+                    height: 4vh;
+                    width: 85vw;
+                    font-size: .8em;
+                    outline: none;
+                }
+            }
         }
     }
 }

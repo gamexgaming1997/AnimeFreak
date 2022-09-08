@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //material UI
@@ -16,19 +16,13 @@ import '../../scss/_Navbar.scss';
 // reusable component
 import Button from '../../ReusableComponents/Button';
 
-const Navbar = () => {
+const Navbar = ({ setTitle }) => {
 
   const navigate = useNavigate();
 
   //hooks
   const [breakpoint] = useState(window.matchMedia('(max-width: 416px)'));
   const [show, setShow] = useState();
-
-  useEffect(() => {
-    if (show) {
-
-    }
-  }, [show])
 
   return (
     <header>
@@ -84,9 +78,21 @@ const Navbar = () => {
                       window.location.reload();
                     }}
                   />
+                  <div className='searchFormContainer'>
+                    <input className='SearchForm' placeholder='Search' onChange={(e) => {
+                      return setTitle(e.target.value)
+                    }}
+                      onKeyPress={(e) => {
+                        if (e.key === 'Enter') {
+                          navigate(`/search/anime`)
+                        }
+                      }}
+                    />
+                  </div>
                 </>
               ) : (
                 <>
+                  {/* none */}
                 </>
               )}
             </>

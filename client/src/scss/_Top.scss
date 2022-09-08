@@ -133,3 +133,25 @@
         }
     }
 }
+
+@include media('<=largePhone') {
+    .top {
+        @include baseDisplay(var(--bg-transparent), 6vh, 100vw);
+
+        .innerTopContainer {
+            @include baseDisplay(var(--bg-transparent), 5vh, 90vw);
+
+            .logoContainer {
+                @include baseDisplay(var(--bg-transparent), 5vh, 35vw);
+
+                .img {
+                    height: 3.5vh;
+                }
+            }
+
+            .searchForm {
+                display: none;
+            }
+        }
+    }
+}
