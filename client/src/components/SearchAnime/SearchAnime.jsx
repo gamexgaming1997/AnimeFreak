@@ -37,7 +37,6 @@ const SearchAnime = ({ title, setGet_Anime_ID, get_anime_id, setTitle }) => {
   const HandleSelectAnime = (e) => {
     e.preventDefault();
     if (get_anime_id) {
-      // setTitle('');
       dispatch(get_mal_id_from_API(get_anime_id))
       navigate(`/anime/view`)
     }

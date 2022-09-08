@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import './include_media.scss';
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,62 +18,70 @@
     --text-hover: rgba($color: #f3aa21, $alpha: 1.0);
 }
 
-@mixin baseDisplay($backgroundColor,$height,$width) {
+@mixin baseDisplay($backgroundColor, $height, $width) {
     background: $backgroundColor;
     height: $height;
     width: $width;
 }
 
-.CONTAINER{
-    @include baseDisplay(var(--bg-transparent),auto,100vw);
+.CONTAINER {
+    @include baseDisplay(var(--bg-transparent), auto, 100vw);
     display: grid;
     justify-content: center;
-    .anime{
-        @include baseDisplay(var(--bg-transparent),auto,72vw);
+
+    .anime {
+        @include baseDisplay(var(--bg-transparent), auto, 72vw);
         margin-top: 2vh;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
         margin-bottom: 10vh;
+
         // padding: 15px 0px 15px 0px;
-        .innerContainer-1{
-            @include baseDisplay(var(--bg-transparent),auto,53vw);
+        .innerContainer-1 {
+            @include baseDisplay(var(--bg-transparent), auto, 53vw);
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-evenly;
             margin: 15px 0px 15px 0px;
-            .detailsContainer{
-                @include baseDisplay(black,auto,53vw);
+
+            .detailsContainer {
+                @include baseDisplay(black, auto, 53vw);
                 display: grid;
                 border-left: 2px solid var(--bg-div);
                 border-right: 2px solid var(--bg-div);
                 border-bottom: 2px solid var(--bg-div);
-                .titleContainer{
-                    @include baseDisplay(var(--bg-div),3vh,53vw);
+
+                .titleContainer {
+                    @include baseDisplay(var(--bg-div), 3vh, 53vw);
                     display: grid;
                     align-items: center;
                     justify-content: flex-start;
-                    .text{
+
+                    .text {
                         font-family: var(--text-font);
                         color: white;
                         margin-left: .5vw;
                     }
                 }
-                .details{
-                    @include baseDisplay(var(--bg-transparent),auto,53vw);
+
+                .details {
+                    @include baseDisplay(var(--bg-transparent), auto, 53vw);
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
-                    .title{
-                        @include baseDisplay(var(--bg-transparent),8vh,53vw);
+
+                    .title {
+                        @include baseDisplay(var(--bg-transparent), 8vh, 53vw);
                         display: grid;
                         align-items: center;
                         justify-content: flex-start;
+
                         // border: 1px solid red;
-                        .text{
+                        .text {
                             font-family: var(--text-font);
                             color: white;
                             margin-left: .5vw;
@@ -80,14 +89,16 @@
                             font-size: 1.8em;
                         }
                     }
-                    .summary{
-                        @include baseDisplay(var(--bg-transparent),auto,53vw);
+
+                    .summary {
+                        @include baseDisplay(var(--bg-transparent), auto, 53vw);
                         display: grid;
                         align-items: center;
                         justify-content: flex-start;
                         // border: 1px solid red;
                         text-align: justify;
-                        .text{
+
+                        .text {
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
@@ -95,83 +106,99 @@
                             padding: 0px 20px;
                         }
                     }
-                    .othertitle{
-                        @include baseDisplay(var(--bg-transparent),5vh,53vw);
+
+                    .othertitle {
+                        @include baseDisplay(var(--bg-transparent), 5vh, 53vw);
                         display: flex;
                         align-items: flex-end;
                         justify-content: flex-start;
-                        .text{
+
+                        .text {
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
                             padding: 0px 20px;
                             margin-bottom: 1vh;
-                            .innerText{
+
+                            .innerText {
                                 font-family: var(--text-font);
                                 color: white;
                             }
-                            .innerText:hover{
+
+                            .innerText:hover {
                                 cursor: pointer;
                                 color: #f3aa21;
                             }
                         }
                     }
-                    .genre{
-                        @include baseDisplay(var(--bg-transparent),4vh,53vw);
+
+                    .genre {
+                        @include baseDisplay(var(--bg-transparent), 4vh, 53vw);
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
-                        .text{
+
+                        .text {
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
                             padding: 0px 20px;
-                            .innerText{
+
+                            .innerText {
                                 font-family: var(--text-font);
                                 color: white;
                             }
-                            .innerText:hover{
+
+                            .innerText:hover {
                                 cursor: pointer;
                                 color: #f3aa21;
                             }
                         }
                     }
-                    .episodes{
-                        @include baseDisplay(var(--bg-transparent),4vh,53vw);
+
+                    .episodes {
+                        @include baseDisplay(var(--bg-transparent), 4vh, 53vw);
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
-                        .text{
+
+                        .text {
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
                             padding: 0px 20px;
-                            .innerText{
+
+                            .innerText {
                                 font-family: var(--text-font);
                                 color: white;
                             }
-                            .innerText:hover{
+
+                            .innerText:hover {
                                 cursor: pointer;
                                 color: #f3aa21;
                             }
                         }
                     }
-                    .status{
-                        @include baseDisplay(var(--bg-transparent),4vh,53vw);
+
+                    .status {
+                        @include baseDisplay(var(--bg-transparent), 4vh, 53vw);
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
                         margin-bottom: 2vh;
-                        .text{
+
+                        .text {
                             font-family: var(--text-font);
                             color: white;
                             font-size: .8em;
                             padding: 0px 20px;
-                            .innerText{
+
+                            .innerText {
                                 font-family: var(--text-font);
                                 color: white;
                             }
-                            .innerText:hover{
+
+                            .innerText:hover {
                                 cursor: pointer;
                                 color: #f3aa21;
                             }
@@ -179,72 +206,84 @@
                     }
                 }
             }
-            .suggestionContainer{
-                @include baseDisplay(black,34vh,53vw);
+
+            .suggestionContainer {
+                @include baseDisplay(black, 34vh, 53vw);
                 display: grid;
                 margin: 10px 0px 0px 0px;
-                .titleContainer{
-                    @include baseDisplay(var(--bg-div),3vh,53vw);
+
+                .titleContainer {
+                    @include baseDisplay(var(--bg-div), 3vh, 53vw);
                     display: grid;
                     align-items: center;
                     justify-content: flex-start;
-                    .text{
+
+                    .text {
                         font-family: var(--text-font);
                         color: white;
                         margin-left: .5vw;
                     }
-                }  
+                }
 
             }
-            .popularanimelistContainer{
-                @include baseDisplay(var(--bg-transparent),31vh,53vw);
+
+            .popularanimelistContainer {
+                @include baseDisplay(var(--bg-transparent), 31vh, 53vw);
                 column-count: 1;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
                 padding: 20px 10px;
-                .animesNames{
+
+                .animesNames {
                     border: 0px solid var(--bg-transparent);
                     background: var(--bg-transparent);
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
                     margin: 2px;
-                    .text{
+
+                    .text {
                         color: white;
                         font-family: var(--text-font);
                     }
                 }
-                .animesNames:hover{
-                    .text{
+
+                .animesNames:hover {
+                    .text {
                         color: #f3aa21;
                     }
                 }
             }
         }
-        .innerContainer-2{
-            @include baseDisplay(var(--bg-transparent),auto,16vw);
+
+        .innerContainer-2 {
+            @include baseDisplay(var(--bg-transparent), auto, 16vw);
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             justify-content: space-evenly;
             align-items: center;
-            .coverContainer{
-                @include baseDisplay(var(--bg-main),51vh,16vw);
+
+            .coverContainer {
+                @include baseDisplay(var(--bg-main), 51vh, 16vw);
                 display: grid;
-                .titleContainer{
-                    @include baseDisplay(var(--bg-div),3vh,16vw);
+
+                .titleContainer {
+                    @include baseDisplay(var(--bg-div), 3vh, 16vw);
                     display: grid;
                     align-items: center;
                     justify-content: flex-start;
-                    .text{
+
+                    .text {
                         font-family: var(--text-font);
                         color: white;
                         margin-left: .5vw;
                     }
                 }
-                .cover{
-                    @include baseDisplay(var(--bg-transparent),48vh,16vw);
+
+                .cover {
+                    @include baseDisplay(var(--bg-transparent), 48vh, 16vw);
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -253,24 +292,29 @@
                     border-bottom: 2px solid var(--bg-div);
                 }
             }
-            .relatedAnimeContainer{
-                @include baseDisplay(black,33vh,16vw);
+
+            .relatedAnimeContainer {
+                @include baseDisplay(black, 33vh, 16vw);
                 margin: 10px 0px 0px 0px;
-                .titleContainer{
-                    @include baseDisplay(var(--bg-div),3vh,16vw);
+
+                .titleContainer {
+                    @include baseDisplay(var(--bg-div), 3vh, 16vw);
                     display: grid;
                     align-items: center;
                     justify-content: flex-start;
-                    .text{
+
+                    .text {
                         font-family: var(--text-font);
                         color: white;
                         margin-left: .5vw;
                     }
                 }
-                .suggestionslistContainer{
-                    @include baseDisplay(var(--bg-transparent),30vh,16vw);
+
+                .suggestionslistContainer {
+                    @include baseDisplay(var(--bg-transparent), 30vh, 16vw);
                     text-align: justify;
-                    .animeTitleBtn{
+
+                    .animeTitleBtn {
                         border: 0px solid var(--bg-transparent);
                         background: var(--bg-transparent);
                         width: 16vw;
@@ -278,16 +322,227 @@
                         align-items: center;
                         justify-content: flex-start;
                         margin: 5px 0px 0px 0px;
-                        .text{
+
+                        .text {
                             margin-left: .5vw;
                             color: white;
                             font-family: var(--text-font);
                             font-size: .9em;
                         }
                     }
-                    .animeTitleBtn:hover{
-                        .text{
+
+                    .animeTitleBtn:hover {
+                        .text {
                             color: #f3aa21;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media('<=mediumWindows') {
+    .CONTAINER {
+        @include baseDisplay(var(--bg-transparent), auto, 100vw);
+
+        .anime {
+            @include baseDisplay(var(--bg-transparent), auto, 72vw);
+
+            // padding: 15px 0px 15px 0px;
+            .innerContainer-1 {
+                @include baseDisplay(var(--bg-transparent), auto, 53vw);
+
+                .detailsContainer {
+                    @include baseDisplay(black, auto, 53vw);
+
+                    .titleContainer {
+                        @include baseDisplay(var(--bg-div), 3vh, 53vw);
+
+                        .text {
+                            font-family: var(--text-font);
+                            color: white;
+                            margin-left: .5vw;
+                        }
+                    }
+
+                    .details {
+                        @include baseDisplay(var(--bg-transparent), auto, 53vw);
+
+                        .title {
+                            @include baseDisplay(var(--bg-transparent), 8vh, 53vw);
+
+                            .text {
+                                font-size: 1.4em;
+                                margin-left: 1.5vw;
+                            }
+                        }
+
+                        .summary {
+                            @include baseDisplay(var(--bg-transparent), auto, 53vw);
+
+                            .text {
+                                font-size: .7em;
+                            }
+                        }
+
+                        .othertitle {
+                            @include baseDisplay(var(--bg-transparent), 5vh, 53vw);
+
+                            .text {
+                                font-size: .7em;
+
+                                .innerText {
+                                    font-family: var(--text-font);
+                                    color: white;
+                                }
+
+                                .innerText:hover {
+                                    cursor: pointer;
+                                    color: #f3aa21;
+                                }
+                            }
+                        }
+
+                        .genre {
+                            @include baseDisplay(var(--bg-transparent), 4vh, 53vw);
+
+                            .text {
+                                font-size: .7em;
+
+                                .innerText {
+                                    font-family: var(--text-font);
+                                    color: white;
+                                }
+
+                                .innerText:hover {
+                                    cursor: pointer;
+                                    color: #f3aa21;
+                                }
+                            }
+                        }
+
+                        .episodes {
+                            @include baseDisplay(var(--bg-transparent), 4vh, 53vw);
+
+                            .text {
+                                font-size: .7em;
+
+                                .innerText {
+                                    font-family: var(--text-font);
+                                    color: white;
+                                }
+
+                                .innerText:hover {
+                                    cursor: pointer;
+                                    color: #f3aa21;
+                                }
+                            }
+                        }
+
+                        .status {
+                            @include baseDisplay(var(--bg-transparent), 4vh, 53vw);
+
+                            .text {
+                                font-size: .7em;
+
+                                .innerText {
+                                    font-family: var(--text-font);
+                                    color: white;
+                                }
+
+                                .innerText:hover {
+                                    cursor: pointer;
+                                    color: #f3aa21;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .suggestionContainer {
+                    @include baseDisplay(black, 34vh, 53vw);
+
+                    .titleContainer {
+                        @include baseDisplay(var(--bg-div), 3vh, 53vw);
+
+                        .text {
+                            font-size: .8em;
+                        }
+                    }
+
+                }
+
+                .popularanimelistContainer {
+                    @include baseDisplay(var(--bg-transparent), 31vh, 53vw);
+
+                    .animesNames {
+
+                        .text {
+                            font-size: .7em;
+                        }
+                    }
+
+                    .animesNames:hover {
+                        .text {
+                            color: #f3aa21;
+                        }
+                    }
+                }
+            }
+
+            .innerContainer-2 {
+                @include baseDisplay(var(--bg-transparent), auto, 16vw);
+
+                .coverContainer {
+                    @include baseDisplay(var(--bg-main), 51vh, 16vw);
+
+                    .titleContainer {
+                        @include baseDisplay(var(--bg-div), 3vh, 16vw);
+
+                        .text {
+                            font-size: .8em;
+                        }
+                    }
+
+                    .cover {
+                        @include baseDisplay(var(--bg-transparent), 49vh, 16vw);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        border-left: 2px solid var(--bg-div);
+                        border-right: 2px solid var(--bg-div);
+                        border-bottom: 2px solid var(--bg-div);
+                    }
+                }
+
+                .relatedAnimeContainer {
+                    @include baseDisplay(black, 33vh, 16vw);
+
+                    .titleContainer {
+                        @include baseDisplay(var(--bg-div), 3vh, 16vw);
+
+                        .text {
+                            font-size: .8em;
+                        }
+                    }
+
+                    .suggestionslistContainer {
+                        @include baseDisplay(var(--bg-transparent), 30vh, 16vw);
+
+                        .animeTitleBtn {
+                            border: 0px solid var(--bg-transparent);
+                            background: var(--bg-transparent);
+
+                            .text {
+                                font-size: .8em;
+                            }
+                        }
+
+                        .animeTitleBtn:hover {
+                            .text {
+                                color: #f3aa21;
+                            }
                         }
                     }
                 }
