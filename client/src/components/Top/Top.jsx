@@ -16,21 +16,21 @@ const Top = ({ setTitle, title }) => {
       <div className='innerTopContainer'>
 
         <div className='logoContainer'>
-          <img src={logo} className='img'/>
+          <img src={logo} className='img' />
         </div>
 
         <div className='searchForm'>
-          <input className='input' placeholder='Search' onChange={(e)=>{
+          <input className='input' placeholder='Search' onChange={(e) => {
             return setTitle(e.target.value)
           }}
-          onKeyPress={(e)=>{
-            if(e.key === 'Enter'){
-              navigate(`/search/anime`)
-            }
-          }}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                navigate(`/search/anime`)
+              }
+            }}
           />
         </div>
-       
+
       </div>
     </div>
   )

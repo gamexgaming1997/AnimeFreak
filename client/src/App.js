@@ -36,7 +36,8 @@ const App = () => {
       withCredentials: false,
       credentials: 'same-origin'
     }).then(val => setList({ ...list, val }))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)
+      );
     data();
   });
 

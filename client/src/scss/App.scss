@@ -3,13 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
-}
-
-html,
-body {
-    min-height: 100%;
-    height: 100%;
+    box-sizing: 0px;
 }
 
 ::-webkit-scrollbar {
@@ -30,7 +24,8 @@ body {
 }
 
 .App {
-    @include baseDisplay(rgb(19, 19, 19), auto, 100vw);
+    @include baseDisplay(rgb(19, 19, 19), 100vh, 100vw);
+    position: relative;
 
     .encapsulate {
         min-height: 100%;

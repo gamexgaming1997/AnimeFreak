@@ -24,7 +24,7 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
   const [topAnime, setTopAnime] = useState([]);
   const [topAnimeRemoveOne, setTopAnimeRemoveOne] = useState([]);
   const [limitIncrement, setLimitIncrement] = useState(10);
-  const [breakpoint, setBreakpoint] = useState(window.matchMedia('(max-width: 416px)'));
+  const [breakpoint] = useState(window.matchMedia('(max-width: 416px)'));
 
   //refs cover photo
   const AnimeImg = useRef(null);
@@ -37,7 +37,11 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
         withCredentials: false,
         credentials: 'same-origin'
       }).then(res => setTopAnime(res.data.data))
-        .catch(err => console.log(err));
+        .catch(err => {
+          if (err.response?.request.status === 429) {
+            fetch();
+          }
+        });
     }
     fetch();
   }, [])
@@ -56,7 +60,11 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
         withCredentials: false,
         credentials: 'same-origin'
       }).then(res => setTopAnimeRemoveOne(res.data.data))
-        .catch(err => console.log(err));
+        .catch(err => {
+          if (err.response?.request.status === 429) {
+            second_fetch();
+          }
+        });
     }
     second_fetch();
   }, [limitIncrement])
