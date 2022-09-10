@@ -37,11 +37,7 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
         withCredentials: false,
         credentials: 'same-origin'
       }).then(res => setTopAnime(res.data.data))
-        .catch(err => {
-          if (err.response?.request.status === 429) {
-            fetch();
-          }
-        });
+        .catch(err => console.log(err));
     }
     fetch();
   }, [])
@@ -60,11 +56,7 @@ const Landingpage = ({ setGet_Anime_ID, get_anime_id }) => {
         withCredentials: false,
         credentials: 'same-origin'
       }).then(res => setTopAnimeRemoveOne(res.data.data))
-        .catch(err => {
-          if (err.response?.request.status === 429) {
-            second_fetch();
-          }
-        });
+        .catch(err => console.log(err));
     }
     second_fetch();
   }, [limitIncrement])
